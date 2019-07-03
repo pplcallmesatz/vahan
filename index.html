@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<title>Vahan Check your regnumber numo</title>
+
+	<!--  -->
+
+	<style>
+        input{
+            text-align: center;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 4px;
+  height: 50px;
+  box-shadow: none;
+      border: 1px solid #535392;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+}
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container text-center">
+        <h1>Check sum of your vehicle registeration number</h1>
+        
+        <div class="form-group">
+        <input type="number" class="form-control" placeholder="enter your vehicle registeration number ex: 1234">
+        </div>
+        <div><h3 class="h3">0</h3>
+            is the sum</div>
+
+        <div class="check-number-series" style="margin-top: 50px;">
+            <h3 style="margin-bottom: 30px;">To check your series based on count</h3>
+        <a href="/vahan/check/" style="font-size: 24px;">Check Number Series</a>
+        </div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script>
+        
+$("input").keyup(function(){
+var a = $(this).val();
+  check(a);
+});
+function check(data){
+var b = data.toString().length;
+  if(b > 1){
+    console.log("count", data);
+    count(data);
+  }
+  else{
+    print(data);
+  }
+}
+function count(data){
+  var s = data.toString();
+   var output = 0;
+  for (var i = 0; i < s.length; i++) {
+    output += parseInt(s.charAt(i));
+  }
+  check(output);
+}
+function print(data){
+  $(".h3").text(data);
+}
+	</script>
+
+</body>
+
+</html>
